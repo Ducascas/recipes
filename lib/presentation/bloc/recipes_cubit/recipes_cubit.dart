@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_app/data/models/news.dart';
 import 'package:recipes_app/data/repositories/recipes_repository.dart';
@@ -13,7 +11,7 @@ class RecipesCubit extends Cubit<RecipesState> {
   static const int itemsPerPage = 10;
   List<Recipe> allRecipes = [];
   List<Recipe> visibleRecipes = [];
-
+  int currentItemLimit = itemsPerPage;
   bool isOfflineMode = false;
 
   Future<void> loadRecipes() async {
@@ -54,5 +52,21 @@ class RecipesCubit extends Cubit<RecipesState> {
         ),
       );
     }
+  }
+
+  void loadNextItems() {
+    if (visibleRecipes.length >= allRecipes.length) return;
+
+    currentItemLimit += itemsPerPage;
+
+    visibleRecipes = allRecipes.take(currentItemLimit).toList();
+
+    emit(
+      RecipesState.loaded(
+        visibleRecipes: visibleRecipes,
+        hasMorePages: visibleRecipes.length < allRecipes.length,
+        isOffline: isOfflineMode,
+      ),
+    );
   }
 }
