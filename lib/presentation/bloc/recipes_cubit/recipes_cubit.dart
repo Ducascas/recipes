@@ -21,9 +21,9 @@ class RecipesCubit extends Cubit<RecipesState> {
       final recipesList = await recipesRepository.getRecipesApi();
 
       isOfflineMode = false;
-
       allRecipes = recipesList;
       visibleRecipes = recipesList.take(itemsPerPage).toList();
+      currentItemLimit = itemsPerPage;
 
       emit(
         RecipesState.loaded(
@@ -43,6 +43,7 @@ class RecipesCubit extends Cubit<RecipesState> {
       isOfflineMode = true;
       allRecipes = cachedList;
       visibleRecipes = cachedList.take(itemsPerPage).toList();
+      currentItemLimit = itemsPerPage;
 
       emit(
         RecipesState.loaded(

@@ -10,5 +10,12 @@ class BlocProviders {
     BlocProvider<FilterCubit>(create: (context) => FilterCubit()),
     BlocProvider<SearchCubit>(create: (context) => SearchCubit()),
     BlocProvider<ThemeCubit>(create: (context) => ThemeCubit(sl())),
+    BlocProvider<RecipesFilterCubit>(
+      create: (context) => RecipesFilterCubit(
+        recipesCubit: context.read<RecipesCubit>(),
+        searchCubit: context.read<SearchCubit>(),
+        filterCubit: context.read<FilterCubit>(),
+      ),
+    ),
   ];
 }

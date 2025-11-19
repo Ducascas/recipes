@@ -37,6 +37,7 @@ class _StepItem extends StatelessWidget {
             style: TextStyle(fontSize: 16, color: Theme.of(context).hintColor),
           ),
           Column(
+            spacing: 6.0,
             children: [
               if (step.image1.isNotEmpty) _StepImage(url: step.image1),
               if (step.image2.isNotEmpty) ...[

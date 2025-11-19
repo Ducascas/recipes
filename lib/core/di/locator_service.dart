@@ -32,5 +32,13 @@ abstract class Locator {
     sl.registerFactory(() => RecipesCubit(sl()));
     sl.registerFactory(() => FilterCubit());
     sl.registerFactory(() => SearchCubit());
+    sl.registerFactory(() => ThemeCubit(sl()));
+    sl.registerFactory(
+      () => RecipesFilterCubit(
+        recipesCubit: sl(),
+        searchCubit: sl(),
+        filterCubit: sl(),
+      ),
+    );
   }
 }
