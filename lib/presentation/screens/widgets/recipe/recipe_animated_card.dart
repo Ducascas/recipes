@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:go_router/go_router.dart';
 import 'package:recipes_app/data/models/news.dart';
 
 class RecipeAnimatedCard extends StatefulWidget {
@@ -62,7 +63,10 @@ class _RecipeAnimatedCardState extends State<RecipeAnimatedCard>
           child: Transform.translate(
             offset: Offset(0, _offset.value),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () => context.push(
+                '/recipe/${widget.recipe.id}',
+                extra: widget.recipe,
+              ),
               child: Card(
                 margin: const EdgeInsets.only(bottom: 16),
                 shape: RoundedRectangleBorder(

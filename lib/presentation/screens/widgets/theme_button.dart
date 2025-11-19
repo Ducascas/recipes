@@ -11,7 +11,10 @@ class ThemeButton extends StatelessWidget {
       builder: (context, theme) {
         final isDark = theme == AppTheme.dark;
         return IconButton(
-          icon: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
+          icon: Icon(
+            isDark ? Icons.dark_mode : Icons.light_mode,
+            color: Theme.of(context).hintColor,
+          ),
           onPressed: () => context.read<ThemeCubit>().toggleTheme(),
         );
       },

@@ -25,7 +25,11 @@ class _FiltersPanelState extends State<FiltersPanel> {
               children: [
                 Text(
                   "Фильтры",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).hintColor,
+                  ),
                 ),
 
                 const SizedBox(width: 6),

@@ -25,13 +25,27 @@ class RecipesList extends StatelessWidget {
               List<Recipe> list = recipesCubit.allRecipes;
 
               if (searchState.isNotEmpty) {
-                list = list
-                    .where(
-                      (r) => r.title.toLowerCase().contains(
-                        searchState.toLowerCase(),
-                      ),
-                    )
-                    .toList();
+                final query = searchState.toLowerCase();
+
+                list = list.where((recipe) {
+                  final titleMatch = recipe.title.toLowerCase().contains(query);
+
+                  final ingredientsOneMatch = recipe.ingredientsOne.any(
+                    (i) =>
+                        i.title.toLowerCase().contains(query) ||
+                        i.text.toLowerCase().contains(query),
+                  );
+
+                  final ingredientsTwoMatch = recipe.ingredientsTwo.any(
+                    (i) =>
+                        i.title.toLowerCase().contains(query) ||
+                        i.text.toLowerCase().contains(query),
+                  );
+
+                  return titleMatch ||
+                      ingredientsOneMatch ||
+                      ingredientsTwoMatch;
+                }).toList();
               }
 
               if (filterState.imageType == ImageFilterType.withImage) {

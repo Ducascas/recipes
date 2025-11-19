@@ -1,6 +1,12 @@
 export 'filters_panel.dart';
-export 'recipe_animated_card.dart';
-export 'recipes_list.dart';
+export 'recipe/energy_list.dart';
+export 'recipe/ingredient_list.dart';
+export 'recipe/recipe_animated_card.dart';
+export 'recipe/recipe_details.dart';
+export 'recipe/recipe_image.dart';
+export 'recipe/recipe_steps_list.dart';
+export 'recipe/recipes_list.dart';
+export 'recipe/text_section_title.dart';
 export 'search_textfield.dart';
 export 'status_network.dart';
 export 'theme_button.dart';

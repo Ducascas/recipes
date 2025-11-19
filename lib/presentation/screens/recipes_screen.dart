@@ -10,10 +10,13 @@ class RecipesListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            const Text('Рецепты'),
+            Text(
+              'Рецепты',
+              style: TextStyle(color: Theme.of(context).hintColor),
+            ),
             const Spacer(),
             StatusNetwork(),
-            ThemeButton()
+            ThemeButton(),
           ],
         ),
         bottom: PreferredSize(
