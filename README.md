@@ -19,7 +19,7 @@
     - SearchCubit – состояние поискового запроса.
     - FilterCubit – фильтры по изображению и времени.
     - RecipesFilterCubit – комбинированная фильтрация по поиску и фильтрам.
-- Presentation/Widgets/ – UI компоненты (списки рецептов, карточки, индикаторы загрузки).
+- Presentation/Widgets/ – UI компоненты (списки рецептов, карточки, статус рабоыт сети, поиск, кнопка переключения темы и тд.).
 
 ### Архитектура
 - State Management: Bloc/Cubit (flutter_bloc)
@@ -71,3 +71,9 @@ dio: ^5.9.0                      # HTTP клиент для работы с API
 
 -   / – список рецептов.
 -   /recipe/:id – детальный экран рецепта.
+  
+
+
+
+<img src="https://github.com/user-attachments/assets/2d33ff6d-cb6a-467b-9a8f-2c076113ced0" width="240" height="600">
+<img src="https://github.com/user-attachments/assets/d9fc194a-7ab3-4ff1-9e98-2cb2ddead40d" width="240" height="460">
