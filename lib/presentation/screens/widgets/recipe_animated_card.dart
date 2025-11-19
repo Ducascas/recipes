@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:go_router/go_router.dart';
 import 'package:recipes_app/data/models/news.dart';
 
 class RecipeAnimatedCard extends StatefulWidget {
@@ -74,7 +73,7 @@ class _RecipeAnimatedCardState extends State<RecipeAnimatedCard>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Hero(
-                      tag: 'recipe-image-${widget.recipe.id}',
+                      tag: widget.recipe.id,
                       child: CachedNetworkImage(
                         imageUrl: widget.recipe.image,
                         height: 120,

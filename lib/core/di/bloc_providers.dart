@@ -7,5 +7,7 @@ class BlocProviders {
     BlocProvider<RecipesCubit>(
       create: (context) => RecipesCubit(sl())..loadRecipes(),
     ),
+    BlocProvider<FilterCubit>(create: (context) => FilterCubit()),
+    BlocProvider<SearchCubit>(create: (context) => SearchCubit()),
   ];
 }
