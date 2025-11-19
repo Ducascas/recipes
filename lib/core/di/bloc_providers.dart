@@ -9,5 +9,6 @@ class BlocProviders {
     ),
     BlocProvider<FilterCubit>(create: (context) => FilterCubit()),
     BlocProvider<SearchCubit>(create: (context) => SearchCubit()),
+    BlocProvider<ThemeCubit>(create: (context) => ThemeCubit(sl())),
   ];
 }

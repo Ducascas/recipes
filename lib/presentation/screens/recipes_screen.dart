@@ -12,7 +12,8 @@ class RecipesListScreen extends StatelessWidget {
           children: [
             const Text('Рецепты'),
             const Spacer(),
-            StatusNetwork()
+            StatusNetwork(),
+            ThemeButton()
           ],
         ),
         bottom: PreferredSize(

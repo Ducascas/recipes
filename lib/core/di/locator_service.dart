@@ -21,6 +21,7 @@ abstract class Locator {
     //Storage
     sl.registerLazySingleton<BaseStorage>(() => BaseStorage());
     sl.registerLazySingleton<RecipesStorage>(() => RecipesStorage());
+    sl.registerLazySingleton<ThemeStorage>(() => ThemeStorage());
 
     //Repository
     sl.registerLazySingleton<RecipesRepository>(
